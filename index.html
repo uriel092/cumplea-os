@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -13,64 +14,72 @@
             background-color: #ffccff; /* Fondo rosa suave */
             margin: 0;
             font-family: Arial, sans-serif;
+            text-align: center;
         }
 
         .container {
-            text-align: center;
             color: #333;
         }
 
-        #celebrateButton {
-            padding: 15px 30px;
-            font-size: 18px;
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
             cursor: pointer;
-            background-color: #ff66cc; /* Rosa más fuerte */
+            background-color: #ff66cc;
             border: none;
             color: white;
             border-radius: 5px;
             transition: background-color 0.3s ease;
-            margin-top: 20px;
+            margin: 10px;
         }
 
-        #celebrateButton:hover {
-            background-color: #ff4da6; /* Rosa más oscuro al hacer hover */
+        button:hover {
+            background-color: #ff4da6;
         }
 
-        #cakeImage {
-            margin-top: 50px; /* Aumentamos el margen superior para centrar mejor */
-            width: 300px;
+        #cakeImage, #noImage {
+            margin-top: 30px;
+            max-width: 400px;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: none;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .message {
-            font-size: 16px;
+            font-size: 18px;
             margin-top: 20px;
             line-height: 1.5;
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img id="cakeImage" src="pinchesputos.jpg" alt="Pastel de Cumpleaños">
-        <button id="celebrateButton">¡Feliz Cumpleaños!</button>
-        <p class="message" id="birthdayMessage"></p>
+        <h2>¿Es tu cumpleaños?</h2>
+        <button id="yesButton">Sí</button>
+        <button id="noButton">No</button>
+
+        <div id="celebration" style="display:none;">
+            <img id="cakeImage" src= "D:\descragas\ash\xd.png" alt="Pastel de Cumpleaños">
+            <p class="message" id="birthdayMessage"></p>
+        </div>
+
+        <div id="noCelebration" style="display:none;">
+            <img id="noImage" src="D:\descragas\ash\7087-6.png" alt="Imagen No Cumpleaños">
+            <p class="message" id="noMessage"></p>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
-        document.getElementById('celebrateButton').addEventListener('click', function() {
-            // Mostrar el pastel
-            document.getElementById('cakeImage').style.display = 'block';
+        document.getElementById('yesButton').addEventListener('click', function() {
+            document.getElementById('celebration').style.display = 'block';
+            document.getElementById('noCelebration').style.display = 'none';
 
-            // Disparar tres veces el confeti
+            // Mostrar pastel
+            document.getElementById('cakeImage').style.display = 'block';
+            document.getElementById('birthdayMessage').innerHTML = "PUTO EL QUE LO LEA";
+
+            // Confeti
             for (let i = 0; i < 3; i++) {
                 setTimeout(() => {
                     confetti({
@@ -78,15 +87,22 @@
                         spread: 70,
                         origin: { y: 0.6 }
                     });
-                }, i * 500); // Espaciado de 500ms entre cada explosión
+                }, i * 500);
             }
+        });
 
-            // Mostrar el mensaje
-            document.getElementById('birthdayMessage').innerHTML = "Mi niña, hoy es tu cumpleaños. No puedo estar contigo este día especial, pero desde lejitos te amo mucho. Eres la mejor persona de mi vida. Aunque no te vea, te amo demasiado. Eres muy especial para mí. ¡Ojalá la pases bien! Te amo.";
+        document.getElementById('noButton').addEventListener('click', function() {
+            document.getElementById('celebration').style.display = 'none';
+            document.getElementById('noCelebration').style.display = 'block';
+
+            // Mostrar imagen y mensaje
+            document.getElementById('noImage').style.display = 'block';
+            document.getElementById('noMessage').innerHTML = "okey puto";
         });
     </script>
 </body>
 </html>
+
 
 
 
