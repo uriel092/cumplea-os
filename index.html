@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -58,16 +57,18 @@
         <button id="yesButton">Sí</button>
         <button id="noButton">No</button>
 
- <div id="celebration" style="display:none;">
-    <img id="cakeImage" src="img/xd.png" alt="Pastel de Cumpleaños">
-    <p class="message" id="birthdayMessage"></p>
-</div>
+        <div id="celebration" style="display:none;">
+            <!-- Ruta corregida -->
+            <img id="cakeImage" src="./img/xd.png" alt="Pastel de Cumpleaños">
+            <p class="message" id="birthdayMessage"></p>
+        </div>
 
-<div id="noCelebration" style="display:none;">
-    <img id="noImage" src="img/7087-6.png" alt="Imagen No Cumpleaños">
-    <p class="message" id="noMessage"></p>
-</div>
-
+        <div id="noCelebration" style="display:none;">
+            <!-- Ruta corregida -->
+            <img id="noImage" src="./img/7087-6.png" alt="Imagen No Cumpleaños">
+            <p class="message" id="noMessage"></p>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
@@ -77,7 +78,7 @@
 
             // Mostrar pastel
             document.getElementById('cakeImage').style.display = 'block';
-            document.getElementById('birthdayMessage').innerHTML = "PUTO EL QUE LO LEA";
+            document.getElementById('birthdayMessage').innerHTML = "¡Feliz cumpleaños! 🎉";
 
             // Confeti
             for (let i = 0; i < 3; i++) {
@@ -97,11 +98,13 @@
 
             // Mostrar imagen y mensaje
             document.getElementById('noImage').style.display = 'block';
-            document.getElementById('noMessage').innerHTML = "okey puto";
+            document.getElementById('noMessage').innerHTML = "Está bien, ¡quizás la próxima vez!";
         });
     </script>
 </body>
 </html>
+
+
 
 
 
